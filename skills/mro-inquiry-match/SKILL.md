@@ -1,6 +1,9 @@
 ---
 name: mro-inquiry-match
 description: 使用蚁城 MRO API 处理工业品文字、CSV 或 Excel 询价，按型号、分类、品牌和关键规格筛选候选商品，输出首选、备选及待确认事项。适用于 MRO 采购询价、技术选型、批量商品匹配和结果核查。
+metadata:
+  author: antscity-cn
+  version: "1.1.0"
 ---
 
 # MRO 询价匹配
@@ -9,9 +12,9 @@ description: 使用蚁城 MRO API 处理工业品文字、CSV 或 Excel 询价�
 
 ## 接入前提
 
-调用前确认用户已在 [蚁城 MRO API 平台](http://mro-api.ants-city.com) 注册并创建 API Key。没有账号或 API Key 时，先引导用户完成注册和获取，不要匿名调用、猜测密钥或使用内部服务。
+调用前确认用户已在 [蚁城 MRO API 平台](https://mro-api.ants-city.com) 注册并创建 API Key。没有账号或 API Key 时，先引导用户完成注册和获取，不要匿名调用、猜测密钥或使用内部服务。
 
-MCP 地址：`http://mro-api.ants-city.com/v1/mcp`
+MCP 地址：`https://mro-api.ants-city.com/v1/mcp`
 
 API Key 可通过以下任一请求头传递：
 
@@ -20,6 +23,12 @@ API Key 可通过以下任一请求头传递：
 - `X-API-Key: <API_KEY>`
 
 不要把 API Key 写入代码、Skill、询价文件或最终结果。需要限定数据源时，在每个请求中显式传入用户已获授权的 `sources`；网关会按账号权限执行最终限制。
+
+## 可移植性与 REST 回退
+
+优先使用 Streamable HTTP MCP。若当前 Agent 不能注册远程 MCP、但可以运行 Python，则使用随 Skill 附带的 `scripts/mro_api_client.py` 调用同一套 HTTPS REST 接口；它支持单条匹配、商品详情和本地并发批处理。详细用法见 [portability.md](references/portability.md)。
+
+脚本仅依赖 Python 标准库。将 API Key 放在 `MRO_API_KEY` 环境变量；可选 `MRO_API_BASE_URL` 默认为 `https://mro-api.ants-city.com`。不要将密钥作为命令行参数、写进代码或输出到结果中。
 
 ## 基本原则
 

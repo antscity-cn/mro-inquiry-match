@@ -31,7 +31,7 @@
 
 ### 1. 注册账号
 
-访问 [蚁城 MRO API 平台](http://mro-api.ants-city.com)，注册并登录账号。
+访问 [蚁城 MRO API 平台](https://mro-api.ants-city.com)，注册并登录账号。
 
 ### 2. 创建 API Key
 
@@ -39,7 +39,17 @@
 
 API Key 相当于账号密码。请勿把它写进 GitHub、询价文件或公开聊天记录；优先通过 Agent 的密钥配置或环境变量保存。
 
-### 3. 让 Agent 安装 Skill
+### 3. 连接方式
+
+支持远程 MCP 的 Agent 使用：
+
+```text
+https://mro-api.ants-city.com/v1/mcp
+```
+
+不能注册远程 MCP、但可以运行 Python 3 的 Agent，可使用 Skill 中的 `scripts/mro_api_client.py` 作为 REST 回退。设置 `MRO_API_KEY` 环境变量后，脚本可处理单条匹配、商品详情和本地并发批处理；详细用法见 [可移植性说明](skills/mro-inquiry-match/references/portability.md)。
+
+### 4. 让 Agent 安装 Skill
 
 将下面这段话发送给 Codex、WorkBuddy，或其他支持从 GitHub 加载 Skill 的 Agent：
 
@@ -58,7 +68,7 @@ scripts/install-skill-from-github.py \
 
 安装后重新启动或刷新 Agent，使 Skill 生效。
 
-### 4. 提交询价
+### 5. 提交询价
 
 单条询价示例：
 

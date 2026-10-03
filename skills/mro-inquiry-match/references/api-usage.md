@@ -2,10 +2,10 @@
 
 ## 服务和认证
 
-- 平台首页：`http://mro-api.ants-city.com`
-- MCP：`POST http://mro-api.ants-city.com/v1/mcp`
-- REST 匹配：`POST http://mro-api.ants-city.com/v1/match-inquiry`
-- REST 商品详情：`GET http://mro-api.ants-city.com/v1/products/{source}/{source_id}`
+- 平台首页：`https://mro-api.ants-city.com`
+- MCP：`POST https://mro-api.ants-city.com/v1/mcp`
+- REST 匹配：`POST https://mro-api.ants-city.com/v1/match-inquiry`
+- REST 商品详情：`GET https://mro-api.ants-city.com/v1/products/{source}/{source_id}`
 
 认证请求头任选一种：`Authorization: Bearer <API_KEY>`、`apikey: <API_KEY>` 或 `X-API-Key: <API_KEY>`。
 
