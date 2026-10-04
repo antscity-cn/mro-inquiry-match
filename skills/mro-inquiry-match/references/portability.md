@@ -32,7 +32,7 @@ python3 scripts/mro_api_client.py match --input request.json
 python3 scripts/mro_api_client.py get-product --source xiyu --source-id 123
 ```
 
-多条互不依赖的请求可以做本地并发处理，每批最多 20 条：
+多条互不依赖的请求可以做本地并发处理，默认每批最多 10 条；只有纯摘要请求可放宽至 20 条：
 
 ```bash
 python3 scripts/mro_api_client.py batch --input inquiries.json --workers 4

@@ -3,7 +3,7 @@ name: mro-inquiry-match
 description: 使用蚁城 MRO API 处理工业品文字、CSV 或 Excel 询价，按型号、分类、品牌和关键规格筛选候选商品，输出首选、备选及待确认事项。适用于 MRO 采购询价、技术选型、批量商品匹配和结果核查。
 metadata:
   author: antscity-cn
-  version: "1.1.0"
+  version: "1.1.1"
 ---
 
 # MRO 询价匹配
@@ -118,7 +118,7 @@ API Key 可通过以下任一请求头传递：
 2. 选定分类后批量查属性。
 3. 映射关键属性后批量取最终商品。
 
-每批最多 20 条；属性分布较大时建议每批 5–10 条。请求项不要传 `index`，按响应 `results[].index` 对回当前批次数组位置，并逐项检查 `result` 或 `error`。
+默认每批最多 10 条，避免随着数据源和属性分布增长而产生过大的响应、超时或高额模型 token 消耗。只有首轮纯摘要请求（`responseMode="summary"`，不返回分面和商品）可以每批放到 20 条。属性分布较大、最终商品核查或定点精筛仍建议每批 5–10 条。请求项不要传 `index`，按响应 `results[].index` 对回当前批次数组位置，并逐项检查 `result` 或 `error`。
 
 先对重复描述或型号去重。只有前一步结果已经返回后，才能构造同一行的下一步请求。详细字段和性能开关见 [api-usage.md](references/api-usage.md)。
 
