@@ -1,4 +1,33 @@
-# MRO 询价匹配 Skill
+# MRO Inquiry Matching Skill / MRO 询价匹配 Skill
+
+[![GitHub stars](https://img.shields.io/github/stars/antscity-cn/mro-inquiry-match?style=flat-square)](https://github.com/antscity-cn/mro-inquiry-match/stargazers)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue?style=flat-square)](LICENSE)
+
+**MRO industrial supplies inquiry matching skill** for purchasing and technical teams. Give an agent a product description, MPN, standard, brand, or specifications; it searches connected industrial catalogs, checks categories and key attributes, and reports a preferred candidate, alternatives, and anything that still needs confirmation. It handles individual inquiries and Excel/CSV batches.
+
+![Illustrative 36-second walkthrough of an M8 hex cap nut inquiry](assets/mro-inquiry-demo.gif)
+
+*Illustrative workflow for “六角盖形螺母 M8，A2，DIN 917”. The animation does not show live catalog results. Confirm final specifications, price, availability, and lead time with the original supplier.*
+
+## Quick Start (English)
+
+1. Register at the [Antscity MRO API platform](https://mro-api.ants-city.com), create an API key, and keep it in your agent's secret configuration or the `MRO_API_KEY` environment variable. Do not commit it to GitHub.
+2. **Install from GitHub:** ask your agent to install [`skills/mro-inquiry-match`](skills/mro-inquiry-match) from this repository. The workflow is defined in [`SKILL.md`](skills/mro-inquiry-match/SKILL.md). For a manual Codex installation:
+
+   ```bash
+   git clone https://github.com/antscity-cn/mro-inquiry-match.git
+   mkdir -p ~/.codex/skills
+   cp -R mro-inquiry-match/skills/mro-inquiry-match ~/.codex/skills/
+   ```
+
+3. Connect your agent to the remote MCP endpoint `https://mro-api.ants-city.com/v1/mcp`. If your agent cannot use remote MCP but can run Python 3, use the included [REST client](skills/mro-inquiry-match/references/portability.md) with `MRO_API_KEY` instead.
+4. Ask: `Use the MRO inquiry matching skill to find 六角盖形螺母 M8，A2，DIN 917. Check the category and key specifications before recommending a product.`
+
+The API requires an account and key; live calls may consume account credit. See the [Chinese setup guide below](#快速开始) for more examples. Search terms: **mro skill**, **inquiry matching skill**, **industrial product matching**, **MRO purchasing**.
+
+---
+
+## 中文说明
 
 蚁城公司推出的 MRO 工业品询价与选型辅助工具。
 
@@ -58,12 +87,12 @@ https://mro-api.ants-city.com/v1/mcp
 https://github.com/antscity-cn/mro-inquiry-match/tree/main/skills/mro-inquiry-match
 ```
 
-如果 Agent 支持 Codex Skill 安装脚本，也可以使用：
+如果使用 Codex，也可以手工安装：
 
 ```bash
-scripts/install-skill-from-github.py \
-  --repo antscity-cn/mro-inquiry-match \
-  --path skills/mro-inquiry-match
+git clone https://github.com/antscity-cn/mro-inquiry-match.git
+mkdir -p ~/.codex/skills
+cp -R mro-inquiry-match/skills/mro-inquiry-match ~/.codex/skills/
 ```
 
 安装后重新启动或刷新 Agent，使 Skill 生效。
