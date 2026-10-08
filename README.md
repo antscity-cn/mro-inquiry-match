@@ -5,7 +5,7 @@
 
 **MRO industrial supplies inquiry matching skill** for purchasing and technical teams. Give an agent a product description, MPN, standard, brand, or specifications; it searches connected industrial catalogs, checks categories and key attributes, and reports a preferred candidate, alternatives, and anything that still needs confirmation. It handles individual inquiries and Excel/CSV batches.
 
-![WorkBuddy MRO inquiry matching demonstration / WorkBuddy MRO 询价匹配操作演示](assets/mro-inquiry-demo.gif)
+![WorkBuddy MRO inquiry matching demonstration / WorkBuddy MRO 询价匹配操作演示](assets/mro-inquiry-workbuddy-demo-20261008.gif)
 
 *32-second WorkBuddy demonstration of the MRO inquiry matching Skill. / 32 秒 WorkBuddy MRO 询价匹配 Skill 操作演示。*
 
