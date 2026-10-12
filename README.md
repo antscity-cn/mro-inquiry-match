@@ -31,9 +31,9 @@ The API requires an account and key; live calls may consume account credit. See 
 
 ## 中文说明
 
-蚁城公司推出的 MRO 工业品询价与选型辅助工具。
+MRO 工业品询价与选型辅助工具。
 
-用户只需提供产品名称、型号、标准、品牌或规格参数，Skill 会调用蚁城 MRO API，在线检索候选商品，逐步核对分类、品牌和关键规格，并给出首选商品、备选商品及需要人工确认的事项。
+用户只需提供产品名称、型号、标准、品牌或规格参数，Skill 会调用MRO API，在线检索候选商品，逐步核对分类、品牌和关键规格，并给出首选商品、备选商品及需要人工确认的事项。
 
 支持文字询价，也支持 Excel、CSV 批量询价。
 
@@ -62,7 +62,7 @@ The API requires an account and key; live calls may consume account credit. See 
 
 ### 1. 注册账号
 
-访问 [蚁城 MRO API 平台](https://mro-api.ants-city.com)，注册并登录账号。
+访问 [MRO API 平台](https://mro-api.ants-city.com)，注册并登录账号。
 
 ### 2. 创建 API Key
 
@@ -146,8 +146,6 @@ cp -R mro-inquiry-match/skills/mro-inquiry-match ~/.codex/skills/
 - 不能接受的规格或品牌
 
 客户自己的零件编码也可以保留，但不要把它当作制造商型号。信息不完整时仍可查询，Skill 会列出候选商品及缺少的确认信息。
-
-
 
 ## 获取帮助
 
