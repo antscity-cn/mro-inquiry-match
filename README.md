@@ -12,6 +12,7 @@
 ## Quick Start (English)
 
 1. Register at the [Antscity MRO API platform](https://mro-api.ants-city.com), create an API key, and keep it in your agent's secret configuration or the `MRO_API_KEY` environment variable. Do not commit it to GitHub.
+
 2. **Install from GitHub:** ask your agent to install [`skills/mro-inquiry-match`](skills/mro-inquiry-match) from this repository. The workflow is defined in [`SKILL.md`](skills/mro-inquiry-match/SKILL.md). For a manual Codex installation:
 
    ```bash
@@ -21,6 +22,7 @@
    ```
 
 3. Connect your agent to the remote MCP endpoint `https://mro-api.ants-city.com/v1/mcp`. If your agent cannot use remote MCP but can run Python 3, use the included [REST client](skills/mro-inquiry-match/references/portability.md) with `MRO_API_KEY` instead.
+
 4. Ask: `Use the MRO inquiry matching skill to find 六角盖形螺母 M8，A2，DIN 917. Check the category and key specifications before recommending a product.`
 
 The API requires an account and key; live calls may consume account credit. See the [Chinese setup guide below](#快速开始) for more examples. Search terms: **mro skill**, **inquiry matching skill**, **industrial product matching**, **MRO purchasing**.
@@ -31,7 +33,7 @@ The API requires an account and key; live calls may consume account credit. See 
 
 蚁城公司推出的 MRO 工业品询价与选型辅助工具。
 
-用户只需提供产品名称、型号、标准、品牌或规格参数，Skill 会调用蚁城 MRO API，在已接入的工业品资料中检索候选商品，逐步核对分类、品牌和关键规格，并给出首选商品、备选商品及需要人工确认的事项。
+用户只需提供产品名称、型号、标准、品牌或规格参数，Skill 会调用蚁城 MRO API，在线检索候选商品，逐步核对分类、品牌和关键规格，并给出首选商品、备选商品及需要人工确认的事项。
 
 支持文字询价，也支持 Excel、CSV 批量询价。
 
@@ -83,7 +85,7 @@ https://mro-api.ants-city.com/v1/mcp
 将下面这段话发送给 Codex、WorkBuddy，或其他支持从 GitHub 加载 Skill 的 Agent：
 
 ```text
-请安装并使用这个 MRO 询价匹配 Skill：
+请安装这个MRO询价匹配 Skill：
 https://github.com/antscity-cn/mro-inquiry-match/tree/main/skills/mro-inquiry-match
 ```
 
@@ -145,15 +147,11 @@ cp -R mro-inquiry-match/skills/mro-inquiry-match ~/.codex/skills/
 
 客户自己的零件编码也可以保留，但不要把它当作制造商型号。信息不完整时仍可查询，Skill 会列出候选商品及缺少的确认信息。
 
-## 数据说明
 
-蚁城 MRO API 平台根据工业品询价和选型需求，对已接入的产品资料进行整理、检索和匹配。
-
-不同数据源在商品名称、属性名称、计价方式和更新时间上可能存在差异。Skill 会尽量核对关键规格并说明匹配依据，但不会替代采购人员、技术人员或供应商的最终确认。
 
 ## 获取帮助
 
-遇到 API Key 无法使用、没有返回候选、分类明显错误、规格筛选未生效或 Excel 无法导出等问题时，请联系蚁城 MRO API 平台维护人员，并提供已脱敏的询价内容和错误信息。
+遇到 API Key 无法使用、没有返回候选、分类明显错误、规格筛选未生效或 Excel 无法导出等问题时，请联系平台维护人员，并提供已脱敏的询价内容和错误信息。
 
 请勿在公开 Issue、截图或聊天记录中提交完整 API Key。
 
